@@ -1,0 +1,16 @@
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
+const firebaseConfig = {
+  apiKey: 'ADD-YOUR-DETAILS-HERE',
+  authDomain: 'ADD-YOUR-DETAILS-HERE',
+  databaseURL: 'ADD-YOUR-DETAILS-HERE',
+  projectId: 'ADD-YOUR-DETAILS-HERE',
+  storageBucket: 'ADD-YOUR-DETAILS-HERE',
+  messagingSenderId: 'ADD-YOUR-DETAILS-HERE',
+  appId: 'ADD-YOUR-DETAILS-HERE',
+}
+
+firebase.initializeApp(firebaseConfig)
+
+export default firebase
