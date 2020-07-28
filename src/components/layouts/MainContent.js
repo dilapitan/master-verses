@@ -23,19 +23,20 @@ function MainContent() {
       .catch((error) => console.log(error))
   }, [])
 
+  let memoryVersesComponent, randomizeComponent
+  if (verses.length) {
+    memoryVersesComponent = <MemoryVersesList verses={verses} />
+    randomizeComponent = <Randomize verses={verses} />
+  } else {
+    memoryVersesComponent = null
+    randomizeComponent = null
+  }
+
   return (
     <div>
       <Switch>
-        <Route
-          path="/"
-          exact
-          render={() => <MemoryVersesList verses={verses} />}
-        />
-        <Route
-          path="/randomize"
-          exact
-          render={() => <Randomize verses={verses} />}
-        />
+        <Route exact path="/" render={() => memoryVersesComponent} />
+        <Route exact path="/randomize" render={() => randomizeComponent} />
         <Route path="/about" exact component={About} />
       </Switch>
     </div>
