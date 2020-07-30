@@ -1,11 +1,10 @@
 import React from 'react'
 
-function MemoryVerse({ verse }) {
+function MemoryVerse({ mv }) {
   return (
     <div>
-      verses
-      {/* <p style={{ fontWeight: 600 }}>{verse.verse}</p>
-      <p>{verse.verseBody}</p> */}
+      <p style={{ fontWeight: 600 }}>{mv.verse}</p>
+      <p>{mv.verseBody}</p>
     </div>
   )
 }
