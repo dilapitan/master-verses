@@ -1,9 +1,9 @@
 import React from 'react'
 
 function SubCategorizedMemoryVersesList({ subCategory, subCategoryVerses }) {
-  console.log('subCategory:', subCategory)
-  console.log('subCategoryVerses:', subCategoryVerses)
-  return <div>sub ca</div>
+  const cleanSubcategory = subCategory.replace(/_/g, ' ').replace(/\w\./i, '')
+
+  return <div>{cleanSubcategory}</div>
 }
 
 export default SubCategorizedMemoryVersesList
