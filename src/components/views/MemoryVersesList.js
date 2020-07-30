@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 function MemoryVersesList({ verses }) {
+  console.log('verses:', verses)
   const [categorizedVerses, setCategorizedVerses] = useState(verses)
   const [category, setCategory] = useState('All')
   const classes = useStyles()
@@ -53,16 +54,20 @@ function MemoryVersesList({ verses }) {
         <InputLabel>Category</InputLabel>
         <Select value={category} onChange={handleChange}>
           <MenuItem value="All">All</MenuItem>
-          <MenuItem value="Christ the Source">A. Christ the Source</MenuItem>
-          <MenuItem value="Abundant Resources">B. Abundant Resources</MenuItem>
+          <MenuItem value="A. Christ – the Source">
+            A. Christ – the Source
+          </MenuItem>
+          <MenuItem value="B. Abundant Resources">
+            B. Abundant Resources
+          </MenuItem>
         </Select>
       </FormControl>
 
       <br />
       <br />
 
-      {categorizedVerses.map((verse) => (
-        <MemoryVerse key={verse.verse} verse={verse} />
+      {categorizedVerses.map((category) => (
+        <MemoryVerse key={category.category} category={category} />
       ))}
     </div>
   )
