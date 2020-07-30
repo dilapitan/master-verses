@@ -11,7 +11,7 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles'
 
-import MemoryVerse from '../MemoryVerse'
+import CategorizedMemoryVerses from '../CategorizedMemoryVersesList'
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -20,7 +20,6 @@ const useStyles = makeStyles(() => ({
 }))
 
 function MemoryVersesList({ verses }) {
-  console.log('verses:', verses)
   const [categorizedVerses, setCategorizedVerses] = useState(verses)
   const [category, setCategory] = useState('All')
   const classes = useStyles()
@@ -67,7 +66,7 @@ function MemoryVersesList({ verses }) {
       <br />
 
       {categorizedVerses.map((category) => (
-        <MemoryVerse key={category.category} category={category} />
+        <CategorizedMemoryVerses key={category.category} category={category} />
       ))}
     </div>
   )

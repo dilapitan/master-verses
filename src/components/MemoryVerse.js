@@ -1,9 +1,9 @@
 import React from 'react'
 
-function MemoryVerse({ category }) {
+function MemoryVerse({ verse }) {
   return (
     <div>
-      {category.category}
+      verses
       {/* <p style={{ fontWeight: 600 }}>{verse.verse}</p>
       <p>{verse.verseBody}</p> */}
     </div>
