@@ -8,14 +8,16 @@ function SubCategorizedMemoryVersesList({ subCategory, subCategoryVerses }) {
 
   return (
     <div>
-      <Typography variant="subtitle1">{cleanSubcategory}</Typography>
-      <Grid container>
+      <Typography variant="h6">{cleanSubcategory}</Typography>
+      <br />
+      <Grid container spacing={4}>
         {subCategoryVerses.map((subCategoryVerse, key) => (
-          <Grid item xs={12} sm={6} md={4} key={key}>
+          <Grid item xs={12} sm={6} md={3} key={key}>
             <MemoryVerse mv={subCategoryVerse} />
           </Grid>
         ))}
       </Grid>
+      <br />
       <Divider />
     </div>
   )
