@@ -3,16 +3,19 @@ import React from 'react'
 import SubCategorizedMemoryVersesList from './SubCategorizedMemoryVersesList'
 
 function CategorizedMemoryVerses({ category }) {
-  delete category.category
+  const tempCategory = { ...category }
+
+  delete tempCategory.category
+
   return (
     <div>
-      {Object.keys(category)
+      {Object.keys(tempCategory)
         .sort()
         .map((key) => (
           <SubCategorizedMemoryVersesList
             key={key}
             subCategory={key}
-            subCategoryVerses={category[key]}
+            subCategoryVerses={tempCategory[key]}
           />
         ))}
     </div>
